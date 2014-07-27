@@ -1,1 +1,1 @@
-console.log 'test'
+gui = require 'nw.gui'

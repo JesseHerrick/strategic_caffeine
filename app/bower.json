@@ -1,0 +1,21 @@
+{
+  "name": "Strategic-Caffeine",
+  "version": "0.1.0",
+  "homepage": "https://github.com/JesseHerrick/strategic_caffeine",
+  "authors": [
+    "JesseHerrick <jessegrantherrick@gmail.com>"
+  ],
+  "description": "An app to monitor your caffeine intake.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.6.1"
+  }
+}

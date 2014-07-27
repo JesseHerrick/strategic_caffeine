@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           join: true
         },
         files: {
-          'src/js/main.js': ['src/coffee/*.coffee', 'src/coffee/vendor/*.coffee', 'src/coffee/vendor/*.js']
+          'src/js/main-coffee.js': ['src/coffee/window.coffee', 'src/coffee/app.coffee', 'src/coffee/*.coffee', 'src/coffee/vendor/*.coffee']
         }
       }
     },
@@ -25,6 +25,20 @@ module.exports = function(grunt) {
       }
     },
 
+    // concat some js
+    concat: {
+      dist: {
+        src: [
+          'src/coffee/vendor/*.js',
+          'bower_components/jquery/dist/jquery.min.js',
+          'bower_components/handlebars/handlebars.min.js',
+          'bower_components/ember/ember.min.js',
+          'src/js/main-coffee.js'
+        ],
+        dest: 'src/js/main.js'
+      }
+    },
+
     // make my js ugly
     uglify: {
       target: {
@@ -37,7 +51,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  task.registerTask('dist', ['coffee', 'sass', 'uglify'])
+  grunt.registerTask('default', ['coffee', 'sass', 'concat']);
 };
