@@ -38,4 +38,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  task.registerTask('dist', ['coffee', 'sass', 'uglify'])
 };
